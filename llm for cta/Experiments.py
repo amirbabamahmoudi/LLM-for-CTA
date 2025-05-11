@@ -169,34 +169,49 @@ multi_column_examples = {
     "example1": ("""
 Classify these column: 
 
-Column 1: Away Away Away Away Away Away Away Home
-Column 2: Final Final Final Final Final Final Final Final
-Column 3: Loss Loss Loss Win Win Loss Win Win
-""", "['location', 'status', 'result']"),
+Column 1: TV TV Other TV TV Web
+Column 2: 2006 2009 2012 2010 2001 2003 
+Column 3: Want to Watch Want to Watch Want to Watch Want to Watch Want to Watch Want to Watch
+""", """
+Reasoning:
+Looking at the table row by row like the first row is "TV," "2006," "Want to Watch," it seems that the first column refers to the type of media, the second column refers to the year associated with each entry, and the third column indicates the status or interest in watching. So, the types would be ["type", "year", "status"].
+"""),
 
     "example2": ("""
 Classify these column: 
 
-Column 1: Jeff Fink nathaniel wells Brook Bielen Ken Hahn Andrew Jansy michael thoen Andrew Hayes Nick Graves Michael Jones Mark Deresta Lloyd Connelly Andy Crump Ricardo Medina Justin Huggins Erik Denninghoff Marcelo Heredia Adam Keir Dante Solano Reynaldo Ortiz rudy vega Mark Vickers
-Column 2: Dimwits Rogue / Mt. View Cycles Wolverine Mountain View Cycles/Subway DNR Cycling Rogue / Mt. View Cycles DNR Cycling Camas Bike and Sport DNR Cycling Upper Echelon Fitness and Rehabilitation
-Column 3: White Salmon Mosier Portland Portland Portland White Salmon Hood River Portland Hood River Portland Oregon City Vancouver Portland Portland Vancouver Portland Portland Portland Forest Grove
-""", "['name', 'team', 'city']"),
+Column 1: Wednesday Thursday Friday Saturday Sunday Monday
+Column 2: Home Home Away Away Home Home 
+Column 3: Final Final Final Final Final Final
+Column 4: Loss Win Loss Loss Loss Win
+""", """
+Reasoning:
+Looking at the table row by row like the first row is "Wednesday," "Home," "Final," "Loss," it seems that the first column refers to the day of the event, the second column refers to the location, the third column indicates the status of the event, and the fourth column shows the result of the event. So, the types would be ["day", "location", "status", "result"]
+"""),
 
     "example3": ("""
 Classify these column: 
 
-Column 1: Greenhouse Gases Greenhouse Gases Greenhouse Gases Greenhouse Gases Greenhouse Gases
-Column 2: C13/C12 in Carbon Dioxide (d13C (CO2)) C13/C12 in Carbon Dioxide (d13C (CO2)) C13/C12 in Carbon Dioxide (d13C (CO2)) C13/C12 in Carbon Dioxide (d13C (CO2)) C13/C12 in Carbon Dioxide
-Column 3: Flask Flask Flask Flask Flask
-""", "['category', 'name','type']"),
+Column 1: 24 24 24 24 24 24
+Column 2: Los Angeles Los Angeles Los Angeles Los Angeles Los Angeles Los Angeles
+Column 3: Hungary Hungary Hungary Hungary Hungary Hungary
+Column 4: 19 4 19 9 5 5
+""", """
+Reasoning:
+Looking at the table row by row like the first row is "24," "Los Angeles," "Hungary," "19," it seems that the first column refers to age of a person based on its columns's range, the second column refers to a city, the third column refers to a country, and the fourth column could represent a rank or some form of numeric code. So, the types would be ["code", "city", "country", "rank"]
+"""),
 
     "example4": ("""
 Classify these column: 
 
-column 1: Introduction to Paddle Boarding Intro to Paddle Boar Intro to Paddle Boar
-column 2: Phillips Lake Park Phillips Lake Park Phillips Lake Park
-column 3: Unavailable Unavailable Unavailable
-""", "['description', 'location', 'status']")
+Column 1: Athina Athina Athina Athina Athina Athina Athina Athina Athina
+Column 2: Australia Australia Australia Australia Australia Australia Australia Australia Australia
+Column 3: 2 1 2 2 1 1 1 1 2
+Column 4: CUB 6, AUS 2 AUS 1, JPN 0 CUB 4, AUS 1 TPE 3, AUS 0 AUS 6, ITA 0 AUS 9, JPN 4 AUS 11, GRE 6 AUS 22, NED 2 CAN 11, AUS 0
+""", """
+Reasoning:
+Looking at the table row by row like the first row is "Athina," "Australia," "2," "CUB 6, AUS 2," it seems that the first column refers to the city where the event took place, the second column refers to a team, the third column indicates the rank of the team based on some criteria, and the fourth column shows the result of a game or match. So, the types would be ["city", "team", "rank", "result"]
+""")
 }
 
 
