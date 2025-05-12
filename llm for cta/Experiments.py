@@ -268,3 +268,11 @@ def multi_column_prompt_gpt(dataset, few_shot=True):
     return results
 
 
+from sklearn.metrics import f1_score
+def f1score (prediction, gt):
+    macro= f1_score(prediction, gt,average="macro")
+    micro= f1_score(prediction, gt,average="micro")
+    weighted = f1_score(prediction, gt,average="weighted")
+    return micro, macro, weighted
+
+
